@@ -14,7 +14,7 @@ body {
     overflow-x: hidden;
 }
 
-/* glow */
+/* glow background */
 .glow {
     position: fixed;
     width: 600px;
@@ -48,22 +48,69 @@ body {
     padding: 50px 20px;
 }
 
-header {
-    text-align: center;
-    padding: 60px 20px;
+/* =========================
+   UBISOFT PLAYER CARD
+========================= */
+.player-card {
+    display: flex;
+    justify-content: center;
+    padding: 70px 20px 30px;
 }
 
-h1 {
-    font-size: 58px;
-    margin: 0;
+.player-info {
+    width: 100%;
+    max-width: 850px;
+
+    background: linear-gradient(135deg,
+        rgba(255, 40, 40, 0.12),
+        rgba(0, 0, 0, 0.65)
+    );
+
+    border: 1px solid rgba(255, 40, 40, 0.25);
+    border-radius: 18px;
+
+    padding: 30px 25px;
+
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.10);
+    backdrop-filter: blur(10px);
+}
+
+.name {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: 4px;
     color: #ff2b2b;
-    text-shadow: 0 0 20px rgba(255,0,0,0.4);
-    letter-spacing: 3px;
+    text-shadow: 0 0 25px rgba(255,0,0,0.35);
 }
 
-.tagline {
-    color: #bbb;
+.subtitle {
     margin-top: 10px;
+    color: #bbb;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.role-box {
+    margin-top: 18px;
+    padding: 12px 14px;
+    display: inline-block;
+
+    border: 1px solid rgba(255, 40, 40, 0.35);
+    border-radius: 10px;
+
+    background: rgba(255, 40, 40, 0.08);
+
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.role-box span {
+    color: #ff3b3b;
+    font-weight: bold;
+}
+
+.badges {
+    margin-top: 15px;
 }
 
 .badges span {
@@ -73,9 +120,12 @@ h1 {
     border-radius: 20px;
     background: rgba(255, 40, 40, 0.15);
     border: 1px solid rgba(255, 40, 40, 0.3);
-    font-size: 13px;
+    font-size: 12px;
 }
 
+/* =========================
+   SECTIONS
+========================= */
 section {
     margin-top: 50px;
 }
@@ -106,7 +156,9 @@ iframe {
     height: 220px;
 }
 
-/* CONTACT BUTTONS */
+/* =========================
+   CONTACT BUTTONS
+========================= */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -134,6 +186,26 @@ iframe {
     background: rgba(255, 40, 40, 0.25);
 }
 
+/* YouTube button */
+.youtube-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: rgba(255, 40, 40, 0.18);
+    border: 1px solid rgba(255, 40, 40, 0.3);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.youtube-btn:hover {
+    transform: scale(1.05);
+    background: rgba(255, 40, 40, 0.3);
+}
+
+/* footer */
 footer {
     text-align: center;
     margin-top: 60px;
@@ -151,15 +223,27 @@ footer {
 
 <div class="container">
 
-<header>
-    <h1>BOOKSY</h1>
-    <div class="tagline">EU Rainbow Six Siege Player • LFT</div>
+<!-- UBISOFT PLAYER CARD -->
+<header class="player-card">
+    <div class="player-info">
 
-    <div class="badges">
-        <span>Entry / Flex</span>
-        <span>Peak Champion</span>
-        <span>Hungary 🇭🇺</span>
-        <span>LFT</span>
+        <div class="name">BOOKSY</div>
+
+        <div class="subtitle">
+            EU Rainbow Six Siege Player • LFT (Looking For Team)
+        </div>
+
+        <div class="badges">
+            <span>Entry / Flex</span>
+            <span>Peak Champion</span>
+            <span>Hungary 🇭🇺</span>
+            <span>Competitive Since 2021</span>
+        </div>
+
+        <div class="role-box">
+            PRIMARY ROLE: <span>ENTRY / FLEX</span>
+        </div>
+
     </div>
 </header>
 
@@ -167,8 +251,22 @@ footer {
 <section>
     <h2>About Me</h2>
     <div class="card">
-        Competitive Rainbow Six Siege player since 2021 with scrim and tournament experience.
-        Focused on Entry / Flex roles, communication, and structured team play.
+        Competitive Rainbow Six Siege player from Hungary with experience since 2021 in scrims, tournaments, and structured team play.
+        Focused on Entry / Flex roles, communication, and continuous improvement in competitive environments.
+    </div>
+</section>
+
+<!-- STRENGTHS -->
+<section>
+    <h2>Strengths</h2>
+
+    <div class="grid">
+        <div class="card">Peak Champion Experience</div>
+        <div class="card">Strong Communication</div>
+        <div class="card">Entry / Flex Roles</div>
+        <div class="card">High-Pressure Performance</div>
+        <div class="card">Team-Oriented Mindset</div>
+        <div class="card">Adaptable Playstyle</div>
     </div>
 </section>
 
@@ -177,55 +275,24 @@ footer {
     <h2>Clips</h2>
 
     <div class="card">
-        <b>🔥 Featured Clip</b>
-        <iframe src="https://www.youtube.com/embed/Kaf1UoL12g4"></iframe>
+        <b>🔥 Watch My Full Channel</b><br>
+        <a class="youtube-btn" href="https://www.youtube.com/@booksy7167" target="_blank">
+            ▶ Visit YouTube Channel
+        </a>
     </div>
 
     <div class="grid">
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/Kaf1UoL12g4"></iframe>
+        </div>
+
         <div class="card">
             <iframe src="https://www.youtube.com/embed/fytd-gVj2Oo"></iframe>
         </div>
+
         <div class="card">
             <iframe src="https://www.youtube.com/embed/FuyqZqBvmTU"></iframe>
         </div>
-    </div>
-</section>
-
-<!-- LIVE FEEDS -->
-<section>
-    <h2>Live Feed</h2>
-
-    <div class="grid">
-
-        <!-- TWITTER -->
-        <div class="card">
-            <b>🐦 Twitter / X</b>
-            <a class="twitter-timeline"
-               data-theme="dark"
-               data-height="350"
-               href="https://twitter.com/imbooksy"></a>
-            <script async src="https://platform.twitter.com/widgets.js"></script>
-        </div>
-
-        <!-- TIKTOK -->
-        <div class="card">
-            <b>🎵 TikTok</b>
-            <blockquote class="tiktok-embed"
-                cite="https://www.tiktok.com/@imbooksy"
-                data-video-id="">
-            </blockquote>
-            <script async src="https://www.tiktok.com/embed.js"></script>
-        </div>
-
-        <!-- TWITCH -->
-        <div class="card">
-            <b>🎥 Twitch</b>
-            <iframe
-                src="https://player.twitch.tv/?channel=imbooksy&parent=booksy-r6.com"
-                allowfullscreen>
-            </iframe>
-        </div>
-
     </div>
 </section>
 
@@ -239,7 +306,7 @@ footer {
 
             <a class="contact-btn" href="https://twitter.com/imbooksy">🐦 Twitter</a>
             <a class="contact-btn" href="https://twitch.tv/imbooksy">🎥 Twitch</a>
-            <a class="contact-btn" href="https://youtube.com">▶ YouTube</a>
+            <a class="contact-btn" href="https://www.youtube.com/@booksy7167">▶ YouTube</a>
             <a class="contact-btn" href="https://tiktok.com/@imbooksy">🎵 TikTok</a>
 
         </div>
