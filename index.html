@@ -1,188 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booksy | R6 Competitive Player</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: radial-gradient(circle at top, #1a0d0d, #07070a);
-            color: white;
-            overflow-x: hidden;
-        }
-        /* RED glow effects */
-        .glow {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: rgba(255, 40, 40, 0.10);
-            filter: blur(130px);
-            top: -120px;
-            left: -120px;
-            animation: float 8s infinite alternate ease-in-out;
-        }
-        .glow2 {
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 0, 0, 0.08);
-            filter: blur(140px);
-            bottom: -120px;
-            right: -120px;
-            animation: float 10s infinite alternate ease-in-out;
-        }
-        @keyframes float {
-            from {
-                transform: translateY(0px);
-            }
-            to {
-                transform: translateY(40px);
-            }
-        }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 50px 20px;
-            position: relative;
-        }
-        header {
-            text-align: center;
-            padding: 60px 20px;
-        }
-        h1 {
-            font-size: 58px;
-            margin: 0;
-            letter-spacing: 3px;
-            color: #ff2b2b;
-            text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-        }
-        .tagline {
-            color: #bbb;
-            margin-top: 10px;
-        }
-        .badges span {
-            display: inline-block;
-            margin: 5px;
-            padding: 6px 12px;
-            border-radius: 20px;
-            background: rgba(255, 40, 40, 0.15);
-            border: 1px solid rgba(255, 40, 40, 0.3);
-            font-size: 13px;
-        }
-        section {
-            margin-top: 50px;
-        }
-        h2 {
-            color: #ff3b3b;
-            border-left: 4px solid #ff3b3b;
-            padding-left: 10px;
-        }
-        .card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255, 40, 40, 0.15);
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 15px;
-            transition: 0.3s;
-            backdrop-filter: blur(10px);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 40, 40, 0.08);
-            border: 1px solid rgba(255, 40, 40, 0.35);
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-        }
-        iframe {
-            width: 100%;
-            border-radius: 10px;
-            height: 200px;
-            border: 1px solid rgba(255, 40, 40, 0.2);
-        }
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            color: #777;
-            font-size: 13px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booksy | LFT R6 Player</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #1a0d0d, #07070a);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* glow */
+.glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 40, 40, 0.10);
+    filter: blur(130px);
+    top: -120px;
+    left: -120px;
+    animation: float 8s infinite alternate ease-in-out;
+}
+
+.glow2 {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 0, 0, 0.08);
+    filter: blur(140px);
+    bottom: -120px;
+    right: -120px;
+    animation: float 10s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(40px); }
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+h1 {
+    font-size: 58px;
+    margin: 0;
+    color: #ff2b2b;
+    text-shadow: 0 0 20px rgba(255,0,0,0.4);
+    letter-spacing: 3px;
+}
+
+.tagline {
+    color: #bbb;
+    margin-top: 10px;
+}
+
+.badges span {
+    display: inline-block;
+    margin: 5px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: rgba(255, 40, 40, 0.15);
+    border: 1px solid rgba(255, 40, 40, 0.3);
+    font-size: 13px;
+}
+
+section {
+    margin-top: 50px;
+}
+
+h2 {
+    color: #ff3b3b;
+    border-left: 4px solid #ff3b3b;
+    padding-left: 10px;
+}
+
+.card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255, 40, 40, 0.15);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+iframe {
+    width: 100%;
+    border-radius: 10px;
+    height: 220px;
+}
+
+/* button */
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: rgba(255, 40, 40, 0.15);
+    border: 1px solid rgba(255, 40, 40, 0.3);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: rgba(255, 40, 40, 0.3);
+}
+
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.social-btn {
+    display: inline-block;
+    padding: 10px 14px;
+    margin: 6px;
+    border-radius: 10px;
+    background: rgba(255, 40, 40, 0.12);
+    border: 1px solid rgba(255, 40, 40, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #777;
+    font-size: 13px;
+}
+</style>
+
 </head>
+
 <body>
-    <div class="glow"></div>
-    <div class="glow2"></div>
-    <div class="container">
-        <header>
-            <h1>BOOKSY</h1>
-            <div class="tagline">EU Competitive Rainbow Six Siege Player</div>
-            <div class="badges">
-                <span>Entry / Flex</span>
-                <span>Peak Champion</span>
-                <span>Hungary 🇭🇺</span>
-                <span>6/7 Availability</span>
-            </div>
-        </header>
-        <section>
-            <h2>About Me</h2>
-            <div class="card">
-                21-year-old EU Rainbow Six Siege player focused on competitive improvement, structured team play, and scrims since 2021.
-            </div>
-        </section>
-        <section>
-            <h2>Clips / Highlights</h2>
-            <!-- FEATURED -->
-            <div class="card">
-                <b>🔥 Featured Highlight</b>
-                <iframe src="https://www.youtube.com/embed/Kaf1UoL12g4" allowfullscreen></iframe>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <b>Entry Frag</b>
-                    <iframe src="https://www.youtube.com/embed/fytd-gVj2Oo" allowfullscreen></iframe>
-                </div>
-                <div class="card">
-                    <b>Clutch / Pressure</b>
-                    <iframe src="https://www.youtube.com/embed/FuyqZqBvmTU" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h2>Playstyle</h2>
-            <div class="card">
-                Entry / Flex player focused on creating space, adapting mid-round, and supporting team structure under pressure.
-            </div>
-        </section>
-        <section>
-            <h2>Strengths</h2>
-            <div class="grid">
-                <div class="card">Peak Champion Experience</div>
-                <div class="card">Strong Communication</div>
-                <div class="card">Team-Oriented Mindset</div>
-                <div class="card">Adaptable Playstyle</div>
-                <div class="card">High Pressure Experience</div>
-                <div class="card">Coachable & Competitive</div>
-            </div>
-        </section>
-        <section>
-            <h2>Looking For</h2>
-            <div class="card">
-                Active EU competitive team with scrims, tournaments, structured practice, and long-term improvement focus.
-            </div>
-        </section>
-        <section>
-            <h2>Contact</h2>
-            <div class="card">
-                Discord: <b>@booksy</b><br>
-                Ubisoft: <b>Booksy.-</b>
-            </div>
-        </section>
-        <footer>
-            booksy-r6.com • Competitive Rainbow Six Siege Portfolio
-        </footer>
+
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<div class="container">
+
+<header>
+    <h1>BOOKSY</h1>
+    <div class="tagline">EU Rainbow Six Siege Player • LFT</div>
+
+    <div class="badges">
+        <span>Entry / Flex</span>
+        <span>Peak Champion</span>
+        <span>Hungary 🇭🇺</span>
+        <span>LFT (Looking For Team)</span>
     </div>
+</header>
+
+<!-- ABOUT -->
+<section>
+    <h2>About Me</h2>
+    <div class="card">
+        Competitive Rainbow Six Siege player from Hungary with experience since 2021 in scrims, tournaments, and team environments.
+
+        <br><br>
+        Strong focus on Entry/Flex roles, communication, and structured team play.
+    </div>
+</section>
+
+<!-- CLIPS -->
+<section>
+    <h2>Clips</h2>
+
+    <div class="card">
+        <b>🔥 Featured</b>
+        <iframe src="https://www.youtube.com/embed/Kaf1UoL12g4"></iframe>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/fytd-gVj2Oo"></iframe>
+        </div>
+        <div class="card">
+            <iframe src="https://www.youtube.com/embed/FuyqZqBvmTU"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- LFT SYSTEM -->
+<section>
+    <h2>LFT Status</h2>
+
+    <div class="card">
+        <p>I am currently <b>Looking For Team (LFT)</b>. Open to competitive tryouts, scrims, and structured teams.</p>
+
+        <button id="inviteBtn" class="btn">🎯 Request Tryout / Contact Me</button>
+
+        <p id="status" style="color:#aaa; font-size:13px;"></p>
+    </div>
+</section>
+
+<!-- SOCIALS -->
+<section>
+    <h2>Socials</h2>
+
+    <div class="card">
+
+        <a class="social-btn" href="https://twitter.com/imbooksy" target="_blank">🐦 Twitter</a>
+        <a class="social-btn" href="https://tiktok.com/@imbooksy" target="_blank">🎵 TikTok</a>
+        <a class="social-btn" href="https://twitch.tv/imbooksy" target="_blank">🎥 Twitch</a>
+        <a class="social-btn" href="https://discord.com/users/booksy" target="_blank">🎮 Discord</a>
+
+    </div>
+</section>
+
+<footer>
+    booksy-r6.com • Competitive Rainbow Six Siege Portfolio
+</footer>
+
+</div>
+
+<script>
+const btn = document.getElementById("inviteBtn");
+const status = document.getElementById("status");
+
+const WEBHOOK = "YOUR_DISCORD_WEBHOOK_HERE";
+
+if (localStorage.getItem("lft_sent") === "true") {
+    btn.disabled = true;
+    btn.innerText = "✔ Already Contacted";
+}
+
+btn.addEventListener("click", async () => {
+
+    const payload = {
+        username: "R6 LFT System",
+        embeds: [{
+            title: "🎯 Tryout / Contact Request",
+            color: 16711680,
+
+            fields: [
+                { name: "Player", value: "Booksy", inline: true },
+                { name: "Role", value: "Entry / Flex", inline: true },
+                { name: "Rank", value: "Peak Champion", inline: true },
+                { name: "Region", value: "EU (Hungary)", inline: true },
+                { name: "Status", value: "LFT - Looking For Team", inline: true }
+            ],
+
+            timestamp: new Date().toISOString()
+        }]
+    };
+
+    try {
+        await fetch(WEBHOOK, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        localStorage.setItem("lft_sent", "true");
+        btn.innerText = "✔ Sent";
+        btn.disabled = true;
+
+    } catch (e) {
+        status.innerText = "Error sending request.";
+    }
+});
+</script>
+
 </body>
 </html>
