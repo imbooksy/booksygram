@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Booksy | LFT R6 Player</title>
+<title>Booksy | R6 LFT Player</title>
 
 <style>
 body {
@@ -106,38 +106,32 @@ iframe {
     height: 220px;
 }
 
-/* button */
-.btn {
-    display: inline-block;
-    padding: 12px 18px;
-    margin-top: 10px;
-    border-radius: 10px;
-    background: rgba(255, 40, 40, 0.15);
-    border: 1px solid rgba(255, 40, 40, 0.3);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+/* CONTACT BUTTONS */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    background: rgba(255, 40, 40, 0.3);
-}
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 
-.btn:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-}
-
-.social-btn {
-    display: inline-block;
-    padding: 10px 14px;
-    margin: 6px;
-    border-radius: 10px;
+    padding: 14px;
+    border-radius: 12px;
     background: rgba(255, 40, 40, 0.12);
     border: 1px solid rgba(255, 40, 40, 0.3);
     color: white;
     text-decoration: none;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+    background: rgba(255, 40, 40, 0.25);
 }
 
 footer {
@@ -165,7 +159,7 @@ footer {
         <span>Entry / Flex</span>
         <span>Peak Champion</span>
         <span>Hungary 🇭🇺</span>
-        <span>LFT (Looking For Team)</span>
+        <span>LFT</span>
     </div>
 </header>
 
@@ -173,10 +167,8 @@ footer {
 <section>
     <h2>About Me</h2>
     <div class="card">
-        Competitive Rainbow Six Siege player from Hungary with experience since 2021 in scrims, tournaments, and team environments.
-
-        <br><br>
-        Strong focus on Entry/Flex roles, communication, and structured team play.
+        Competitive Rainbow Six Siege player since 2021 with scrim and tournament experience.
+        Focused on Entry / Flex roles, communication, and structured team play.
     </div>
 </section>
 
@@ -185,7 +177,7 @@ footer {
     <h2>Clips</h2>
 
     <div class="card">
-        <b>🔥 Featured</b>
+        <b>🔥 Featured Clip</b>
         <iframe src="https://www.youtube.com/embed/Kaf1UoL12g4"></iframe>
     </div>
 
@@ -199,29 +191,58 @@ footer {
     </div>
 </section>
 
-<!-- LFT SYSTEM -->
+<!-- LIVE FEEDS -->
 <section>
-    <h2>LFT Status</h2>
+    <h2>Live Feed</h2>
 
-    <div class="card">
-        <p>I am currently <b>Looking For Team (LFT)</b>. Open to competitive tryouts, scrims, and structured teams.</p>
+    <div class="grid">
 
-        <button id="inviteBtn" class="btn">🎯 Request Tryout / Contact Me</button>
+        <!-- TWITTER -->
+        <div class="card">
+            <b>🐦 Twitter / X</b>
+            <a class="twitter-timeline"
+               data-theme="dark"
+               data-height="350"
+               href="https://twitter.com/imbooksy"></a>
+            <script async src="https://platform.twitter.com/widgets.js"></script>
+        </div>
 
-        <p id="status" style="color:#aaa; font-size:13px;"></p>
+        <!-- TIKTOK -->
+        <div class="card">
+            <b>🎵 TikTok</b>
+            <blockquote class="tiktok-embed"
+                cite="https://www.tiktok.com/@imbooksy"
+                data-video-id="">
+            </blockquote>
+            <script async src="https://www.tiktok.com/embed.js"></script>
+        </div>
+
+        <!-- TWITCH -->
+        <div class="card">
+            <b>🎥 Twitch</b>
+            <iframe
+                src="https://player.twitch.tv/?channel=imbooksy&parent=booksy-r6.com"
+                allowfullscreen>
+            </iframe>
+        </div>
+
     </div>
 </section>
 
-<!-- SOCIALS -->
+<!-- CONTACT -->
 <section>
-    <h2>Socials</h2>
+    <h2>Contact Me</h2>
 
     <div class="card">
 
-        <a class="social-btn" href="https://twitter.com/imbooksy" target="_blank">🐦 Twitter</a>
-        <a class="social-btn" href="https://tiktok.com/@imbooksy" target="_blank">🎵 TikTok</a>
-        <a class="social-btn" href="https://twitch.tv/imbooksy" target="_blank">🎥 Twitch</a>
-        <a class="social-btn" href="https://discord.com/users/booksy" target="_blank">🎮 Discord</a>
+        <div class="contact-grid">
+
+            <a class="contact-btn" href="https://twitter.com/imbooksy">🐦 Twitter</a>
+            <a class="contact-btn" href="https://twitch.tv/imbooksy">🎥 Twitch</a>
+            <a class="contact-btn" href="https://youtube.com">▶ YouTube</a>
+            <a class="contact-btn" href="https://tiktok.com/@imbooksy">🎵 TikTok</a>
+
+        </div>
 
     </div>
 </section>
@@ -231,54 +252,6 @@ footer {
 </footer>
 
 </div>
-
-<script>
-const btn = document.getElementById("inviteBtn");
-const status = document.getElementById("status");
-
-const WEBHOOK = "https://discord.com/api/webhooks/1513762988585123910/ua_TEVfpQrrgiT46u1wQ9A5vuRqqAW_mQGCW2ruCR2DMxjdiMNm3-L4C4mOcqrzZuzQK";
-
-if (localStorage.getItem("lft_sent") === "true") {
-    btn.disabled = true;
-    btn.innerText = "✔ Already Contacted";
-}
-
-btn.addEventListener("click", async () => {
-
-    const payload = {
-        username: "R6 LFT System",
-        embeds: [{
-            title: "🎯 Tryout / Contact Request",
-            color: 16711680,
-
-            fields: [
-                { name: "Player", value: "Booksy", inline: true },
-                { name: "Role", value: "Entry / Flex", inline: true },
-                { name: "Rank", value: "Peak Champion", inline: true },
-                { name: "Region", value: "EU (Hungary)", inline: true },
-                { name: "Status", value: "LFT - Looking For Team", inline: true }
-            ],
-
-            timestamp: new Date().toISOString()
-        }]
-    };
-
-    try {
-        await fetch(WEBHOOK, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-
-        localStorage.setItem("lft_sent", "true");
-        btn.innerText = "✔ Sent";
-        btn.disabled = true;
-
-    } catch (e) {
-        status.innerText = "Error sending request.";
-    }
-});
-</script>
 
 </body>
 </html>
